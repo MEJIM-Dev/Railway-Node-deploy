@@ -80,6 +80,10 @@ app.use(cookieParser())
 //     next()
 // })
 
+app.get("/",(req,res)=>{
+    res.send("Welcome to my Demo page")
+})
+
 app.get("/posts", function(req,res){
     // fs.readFile("posts.json","utf-8",(err,data)=>{
     //     if(err){
