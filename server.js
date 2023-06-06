@@ -9,7 +9,7 @@ require("dotenv").config({})
 
 const app = express()
 
-const {DB_URL} = process.env
+const {DB_URL,PORT} = process.env
 
 function writeToFileDb(filename,content){
     fs.readFile(filename,"utf-8",function(err,data){
@@ -382,6 +382,7 @@ app.get("/user/verify",(req,res)=>{
     })
 })
 
-app.listen(8082, ()=>{
+app.listen(PORT || 3000, ()=>{
+    console.log(PORT)
     console.log("express server started")
 })
